@@ -12,7 +12,18 @@ done
 
 echo "==> Dotfiles verlinken"
 ln -sf "$DOTFILES_DIR/zsh/.zshrc" ~/.zshrc
-ln -sf "$DOTFILES_DIR/git/gitconfig" ~/.gitconfig
 ln -sf "$DOTFILES_DIR/starship/starship.toml" ~/.config/starship.toml
+ln -sf "$DOTFILES_DIR/git/gitconfig" ~/.gitconfig
+
+# Lokale gitconfig nur anlegen, wenn sie fehlt
+if [ ! -f ~/.gitconfig.local ]; then
+  cat << 'EOF' > ~/.gitconfig.local
+[user]
+  name =
+  email =
+EOF
+
+  echo "Hinweis: Bitte ~/.gitconfig.local mit Name & E-Mail ausfüllen."
+fi
 
 echo "==> Fertig. Bitte Terminal neu starten."

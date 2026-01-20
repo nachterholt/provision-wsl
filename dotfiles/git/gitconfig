@@ -7,6 +7,7 @@
 
 [interactive]
   diffFilter = delta --color-only
-[user]
-	email = nils.achterholt@profil.com
-	name = Nils Achterholt
+
+# Persönliche Daten aus lokaler Datei laden
+[include]
+  path = ~/.gitconfig.local
