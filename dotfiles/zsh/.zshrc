@@ -10,5 +10,8 @@ source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
 
 # Eigene Konfiguration
-source ~/dotfiles/zsh/aliases.zsh
-source ~/dotfiles/zsh/plugins.zsh
+source ~/provision-wsl/dotfiles/zsh/aliases.zsh
+source ~/provision-wsl/dotfiles/zsh/plugins.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
