@@ -15,3 +15,8 @@ source ~/provision-wsl/dotfiles/zsh/plugins.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+
+#Language setzen, damit Icons korrekt angezeigt werden
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
