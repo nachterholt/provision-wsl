@@ -1,0 +1,61 @@
+# ----------------------------------------
+# Allgemein
+# ----------------------------------------
+add_newline = true
+command_timeout = 800
+scan_timeout = 30
+
+format = """
+$username$hostname$directory$git_branch$git_status$nodejs
+$character
+"""
+
+# ----------------------------------------
+# User / Host (WSL-freundlich)
+# ----------------------------------------
+[username]
+show_always = false
+
+[hostname]
+ssh_only = true
+format = "@[$hostname]($style) "
+
+# ----------------------------------------
+# Directory
+# ----------------------------------------
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = "bold cyan"
+
+# ----------------------------------------
+# Git
+# ----------------------------------------
+[git_branch]
+symbol = " "
+style = "bold purple"
+
+[git_status]
+style = "red"
+conflicted = "⚠ "
+untracked = "● "
+modified = "✚ "
+staged = "✔ "
+ahead = "⇡ "
+behind = "⇣ "
+
+# ----------------------------------------
+# Node / Angular
+# ----------------------------------------
+[nodejs]
+symbol = " "
+style = "green"
+detect_extensions = ["js", "ts"]
+detect_files = ["package.json", "angular.json"]
+
+# ----------------------------------------
+# Prompt Character
+# ----------------------------------------
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
