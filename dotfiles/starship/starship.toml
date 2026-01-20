@@ -3,46 +3,71 @@
 # ----------------------------------------
 add_newline = true
 command_timeout = 800
-scan_timeout = 30
+scan_timeout = 100
 
 format = """
-$username$hostname$directory$git_branch$git_status$nodejs
-$character
+[](#9A348E)\
+$username$hostname\
+[](bg:#DA627D fg:#9A348E)\
+$directory\
+[](fg:#DA627D bg:#FCA17D)\
+$git_branch\
+$git_status\
+[](fg:#FCA17D bg:#86BBD8)\
+$nodejs\
+[](fg:#06969A bg:#33658A)\
+$time\
+[](fg:#33658A)
+$character\
 """
+
+# format = """
+# $username$hostname$directory$git_branch$git_status$nodejs
+# $character
+# """
 
 # ----------------------------------------
 # User / Host (WSL-freundlich)
 # ----------------------------------------
 [username]
-show_always = false
+show_always = true
+style_user = "bg:#9A348E"
+style_root = "bg:#9A348E"
+format = '[$user ]($style)'
+disabled = false
 
 [hostname]
 ssh_only = true
-format = "@[$hostname]($style) "
+style = "bg:#9A348E"
+format = "[@$hostname]($style)"
 
 # ----------------------------------------
 # Directory
 # ----------------------------------------
 [directory]
-truncation_length = 3
 truncate_to_repo = true
-style = "bold cyan"
+style = "bg:#DA627D"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
 
 # ----------------------------------------
 # Git
 # ----------------------------------------
 [git_branch]
-symbol = " "
-style = "bold purple"
+symbol = ""
+style = "bg:#FCA17D"
+format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "red"
+style = "bg:#FCA17D"
 conflicted = "⚠ "
 untracked = "● "
 modified = "✚ "
 staged = "✔ "
 ahead = "⇡ "
 behind = "⇣ "
+format = '[$all_status$ahead_behind ]($style)'
 
 # ----------------------------------------
 # Node / Angular
@@ -54,8 +79,18 @@ detect_extensions = ["js", "ts"]
 detect_files = ["package.json", "angular.json"]
 
 # ----------------------------------------
+# Time
+# ----------------------------------------
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#33658A"
+format = '[  $time ]($style)'
+
+# ----------------------------------------
 # Prompt Character
 # ----------------------------------------
 [character]
-success_symbol = "[❯](bold green)"
-error_symbol = "[❯](bold red)"
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
