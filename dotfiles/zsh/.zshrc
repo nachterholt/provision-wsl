@@ -20,3 +20,7 @@ export NVM_DIR="$HOME/.nvm"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+#PATH anpassen, damit lokale Binaries gefunden werden
+export PATH="$HOME/.local/bin:$PATH"
+
+
