@@ -9,6 +9,9 @@ source $ZSH/oh-my-zsh.sh
 # Starship initialisieren
 eval "$(starship init zsh)"
 
+#PATH anpassen, damit lokale Binaries gefunden werden
+export PATH="$HOME/.local/bin:$PATH"
+
 # Eigene Konfiguration
 source ~/provision-wsl/dotfiles/zsh/aliases.zsh
 source ~/provision-wsl/dotfiles/zsh/plugins.zsh
@@ -20,7 +23,5 @@ export NVM_DIR="$HOME/.nvm"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-#PATH anpassen, damit lokale Binaries gefunden werden
-export PATH="$HOME/.local/bin:$PATH"
 
 
