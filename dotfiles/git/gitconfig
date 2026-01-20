@@ -7,3 +7,6 @@
 
 [interactive]
   diffFilter = delta --color-only
+[user]
+	email = nils.achterholt@profil.com
+	name = Nils Achterholt
