@@ -10,6 +10,11 @@ for script in scripts/*.sh; do
   source "$script"
 done
 
+echo "==> Locale auf en_US.UTF-8 setzen"
+sudo locale-gen en_US.UTF-8
+sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+
+
 echo "==> Dotfiles verlinken"
 ln -sf "$DOTFILES_DIR/zsh/.zshrc" ~/.zshrc
 ln -sf "$DOTFILES_DIR/starship/starship.toml" ~/.config/starship.toml
