@@ -16,7 +16,7 @@ $git_status\
 [](fg:#FCA17D bg:#86BBD8)\
 $nodejs\
 ${custom.delphi}\
-[](fg:#06969A bg:#33658A)\
+[](fg:#86BBD8 bg:#33658A)\
 $time\
 [](fg:#33658A)
 $character\
@@ -62,12 +62,12 @@ format = '[ $symbol $branch ]($style)'
 
 [git_status]
 style = "bg:#FCA17D"
-conflicted = "⚠ "
-untracked = "● "
-modified = "✚ "
-staged = "✔ "
-ahead = "⇡ "
-behind = "⇣ "
+conflicted = "⚠"
+untracked = ""
+modified = "✚"
+staged = "✔"
+ahead = "⇡"
+behind = "⇣"
 format = '[$all_status$ahead_behind ]($style)'
 
 # ----------------------------------------
