@@ -1,0 +1,7 @@
+{
+	"recommendations": [
+		"tamasfe.even-better-toml",
+		"foxundermoon.shell-format",
+		"mads-hartmann.bash-ide-vscode"
+	]
+}
